@@ -17,7 +17,7 @@ $loanItemHeight: 128;
 .layoutWrapper {
   min-height: 1px;
   min-width: 1px;
-  margin-bottom: calc($toolbar-height + 16px);
+  margin-bottom: 72px; // toolbar height + 16px of margin
 }
 
 .paperWrapper {
