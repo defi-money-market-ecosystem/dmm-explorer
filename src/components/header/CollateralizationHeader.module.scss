@@ -1,0 +1,28 @@
+@import '../../layout/variables.scss';
+
+.collateralizationGrid {
+  justify-content: center;
+}
+
+.collateralizationPaper {
+  max-width: 300px;
+  margin: 8px;
+  padding: 16px;
+  min-height: 150px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.collateralizationHeader {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.collateralizationText {
+  min-width: 275px;
+}

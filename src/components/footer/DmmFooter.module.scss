@@ -1,0 +1,12 @@
+@import '../../layout/variables.scss';
+
+.footerContainer {
+  bottom: 0;
+  position: fixed !important;
+  height: $toolbar-height;
+}
+
+.footer {
+  color: $primary !important;
+  background-color: $primary !important;
+}

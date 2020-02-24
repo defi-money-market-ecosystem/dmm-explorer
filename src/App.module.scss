@@ -86,3 +86,8 @@ code {
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  justify-self: flex-end;
+  display: flex;
+}

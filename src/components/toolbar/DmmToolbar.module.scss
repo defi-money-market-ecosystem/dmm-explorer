@@ -1,14 +1,14 @@
 @import '../../layout/variables.scss';
 
-.loadWallet {
-  color: $white !important;
-}
-
 .toolbar {
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  color: $primary !important;
+  background-color: $primary !important;
 }
 
-.progressBar {
-  padding: 4px;
+.logoButton {
+  color: $white !important;
+  font-family: 'Raleway', 'Open Sans', 'Roboto', sans-serif !important;
+  font-size: 18px !important;
 }

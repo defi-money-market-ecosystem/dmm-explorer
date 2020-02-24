@@ -1,0 +1,88 @@
+@import '../../layout/variables.scss';
+
+$loanItemHeight: 128;
+
+:export {
+  loanItemHeight: $loanItemHeight;
+}
+
+.collateralizationText {
+  text-overflow: ellipsis;
+}
+
+.loanGrid {
+  justify-content: center;
+}
+
+.layoutWrapper {
+  min-height: 1px;
+  min-width: 1px;
+  margin-bottom: calc($toolbar-height + 16px);
+}
+
+.paperWrapper {
+  background-color: $white;
+  width: 100%;
+  //height: calc(100vh - $toolbar-height);
+  height: 100vh;
+  margin-bottom: 72px;
+  flex: 1 !important;
+}
+
+.recycler {
+}
+
+.scrollableContainer {
+  overflow: scroll;
+}
+
+.loanContainer {
+  padding: 16px;
+  min-width: 600px;
+}
+
+.loanLeftSide {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.loanRightSide {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-basis: 8px;
+  text-align: start;
+}
+
+.loanLeftSideItem {
+  margin: 4px;
+}
+
+.loanRightSideItem {
+  margin: 6px;
+}
+
+.divider {
+  width: 100%;
+  height: 0.5px;
+  background-color: #CFCFCF;
+  margin-top: 8px;
+}
+
+.activeLoan {
+  color: $green;
+}
+
+.closedLoan {
+  color: $red;
+}
+
+.disabledButton {
+  cursor: not-allowed;
+  color: #C0C0C0;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
