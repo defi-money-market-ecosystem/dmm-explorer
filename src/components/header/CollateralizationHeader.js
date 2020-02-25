@@ -44,10 +44,15 @@ class CollateralizationHeader extends React.Component {
         })
       });
 
-    LoansService.getLoanMetadata()
-      .then(loanMetadata => {
+    LoansService.getLoansWithMetadata()
+      .then(loansWithMetadata => {
+        const activeLoans = loansWithMetadata.loans.filter(loan => loan.loanStatus === 'ACTIVE');
+        const sumActiveLoans = activeLoans.reduce((sum, loan) => {
+          return sum + loan.retailValue;
+        }, 0);
         this.setState({
-          loanMetadata,
+          sumActiveLoans: sumActiveLoans,
+          loanMetadata: loansWithMetadata.lastUpdatedTimestamp,
         });
       })
       .catch(error => {
@@ -56,6 +61,11 @@ class CollateralizationHeader extends React.Component {
   };
 
   render = () => {
+    const activeLoansValueString = (this.state.sumActiveLoans || 0).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD"
+    });
+
     return (
       <Grid container className={styles.collateralizationGrid}>
         <Grid item xs={12} lg={8} className={styles.collateralizationHeader}>
@@ -63,7 +73,17 @@ class CollateralizationHeader extends React.Component {
             {this.renderCollateralizaton(false)}
           </Paper>
           <Paper elevation={2} className={styles.collateralizationPaper}>
-            <Tooltip disableFocusListener title={"The (local) time at which these loans were last updated. These loans don't change often, so they can go up to roughly 2 weeks without being updated."}>
+            <Tooltip disableFocusListener
+                     title={"The sum of the values of all the active loans"}>
+              <div>
+                <h3>Value of All Active Loans:</h3>
+                <h3>{activeLoansValueString}</h3>
+              </div>
+            </Tooltip>
+          </Paper>
+          <Paper elevation={2} className={styles.collateralizationPaper}>
+            <Tooltip disableFocusListener
+                     title={"The (local) time at which these loans were last updated. These loans don't change often, so they can go up to roughly 2 weeks without being updated."}>
               <div>
                 <h3>Last Updated:</h3>
                 <h3>{this.state.loanMetadata}</h3>
@@ -94,7 +114,8 @@ class CollateralizationHeader extends React.Component {
       collateralization ?
         (<Tooltip disableFocusListener title={tooltipText}>
           <div>
-            <h3 className={styles.collateralizationText}>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3>
+            <h3
+              className={styles.collateralizationText}>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3>
             <h3>{this.standardizeCollateralization(collateralization)}</h3>
           </div>
         </Tooltip>) :

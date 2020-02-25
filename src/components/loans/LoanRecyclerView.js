@@ -45,6 +45,16 @@ class LoanRecyclerView extends React.Component {
     LoanService
       .getLoans()
       .then(loans => {
+        loans.sort((x1, x2) => {
+          if(!x1.digitalLienLink) {
+            return 999999999;
+          } else if (!x2.digitalLienLink) {
+            return -999999999;
+          } else {
+            return x2.loanId - x1.loanId;
+          }
+        });
+
         this.setState({
           isLoading: false,
           dataProvider: this.state.dataProvider.cloneWithRows(loans)

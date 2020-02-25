@@ -10,12 +10,17 @@ export const getLoans = () => {
     .then(loans => Loan.fromArray(loans));
 };
 
-export const getLoanMetadata = () => {
+export const getLoansWithMetadata = () => {
   return fetch(`${baseUrl}/v1/loans`)
     .then(response => response.json())
-    .then(response => response["data"]["last_updated_millis"])
+    .then(response => response["data"])
     // .then(lastUpdatedMillis => moment(lastUpdatedMillis).format('YYYY-MM-DD HH:mm'));
-    .then(lastUpdatedMillis => moment(lastUpdatedMillis).format('LLL'));
+    .then(data => {
+      return {
+        loans: Loan.fromArray(data["loans"]),
+        lastUpdatedTimestamp: moment(data["last_updated_millis"]).format('LLL')
+      }
+    });
 };
 
 export const getTotalCollateralization = () => {

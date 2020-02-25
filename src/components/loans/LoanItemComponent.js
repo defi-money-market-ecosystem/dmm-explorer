@@ -57,7 +57,7 @@ export class LoanItemComponent extends React.Component {
             </p>
           </Grid>
           <Grid item xs={6} lg={9} className={style.loanRightSide}>
-            <p className={style.loanRightSideItem}>Retail Value:&nbsp;{loanValueString}</p>
+            <p className={style.loanRightSideItem}>Value (USD):&nbsp;{loanValueString}</p>
             <p className={style.loanRightSideItem}>{loan.vehicleInfo}</p>
             {lienView}
           </Grid>
