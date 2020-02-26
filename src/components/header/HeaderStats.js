@@ -75,7 +75,7 @@ class HeaderStats extends React.Component {
           </Paper>
           <Paper elevation={2} className={styles.statsPaper}>
             <DmmTooltip arrow disableFocusListener
-                     title={"The aggregate sum of all the assets"}>
+                     title={"The aggregate sum of all the assets whose status is ACTIVE."}>
               <div>
                 <h3>Value of All Active Assets:</h3>
                 <h3>{activeLoansValueString}</h3>
