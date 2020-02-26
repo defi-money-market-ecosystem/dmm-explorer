@@ -67,12 +67,12 @@ class HeaderStats extends React.Component {
     });
 
     return (
-      <Grid container className={styles.collateralizationGrid}>
-        <Grid item xs={12} lg={8} className={styles.collateralizationHeader}>
-          <Paper elevation={2} className={styles.collateralizationPaper}>
+      <Grid container className={styles.statsGrid}>
+        <Grid item xs={12} lg={8} className={styles.statsHeader}>
+          <Paper elevation={2} className={styles.statsPaper}>
             {this.renderCollateralizaton(false)}
           </Paper>
-          <Paper elevation={2} className={styles.collateralizationPaper}>
+          <Paper elevation={2} className={styles.statsPaper}>
             <Tooltip disableFocusListener
                      title={"The aggregate sum of all the assets"}>
               <div>
@@ -81,7 +81,7 @@ class HeaderStats extends React.Component {
               </div>
             </Tooltip>
           </Paper>
-          <Paper elevation={2} className={styles.collateralizationPaper}>
+          <Paper elevation={2} className={styles.statsPaper}>
             <Tooltip disableFocusListener
                      title={"The amount of interest that can be earned by lenders by minting and holding mAssets."}>
               <div>
@@ -90,7 +90,7 @@ class HeaderStats extends React.Component {
               </div>
             </Tooltip>
           </Paper>
-          <Paper elevation={2} className={styles.collateralizationPaper}>
+          <Paper elevation={2} className={styles.statsPaper}>
             {this.renderCollateralizaton(true)}
           </Paper>
         </Grid>
@@ -118,7 +118,7 @@ class HeaderStats extends React.Component {
         (<Tooltip disableFocusListener title={tooltipText}>
           <div>
             <h3
-              className={styles.collateralizationText}>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3>
+              className={styles.statsText}>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3>
             <h3>{this.standardizeCollateralization(collateralization)}</h3>
           </div>
         </Tooltip>) :

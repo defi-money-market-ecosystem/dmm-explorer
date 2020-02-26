@@ -15,7 +15,7 @@ class DmmToolbar extends React.Component {
     return (
       <AppBar position="static">
         <Toolbar className={styles.toolbar}>
-          <span className={styles.logoButton}>DMM Explorer</span>
+          <span className={styles.logo}>DMM Explorer</span>
           <Button className={styles.appButton} href={"https://app.defimoneymarket.com"}>App</Button>
         </Toolbar>
       </AppBar>
