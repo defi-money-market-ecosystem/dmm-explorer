@@ -7,6 +7,7 @@ import * as LoansService from "../../services/LoansService";
 import styles from "./HeaderStats.module.scss";
 import {CircularProgress} from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 class HeaderStats extends React.Component {
 
@@ -73,22 +74,22 @@ class HeaderStats extends React.Component {
             {this.renderCollateralizaton(false)}
           </Paper>
           <Paper elevation={2} className={styles.statsPaper}>
-            <Tooltip disableFocusListener
+            <DmmTooltip arrow disableFocusListener
                      title={"The aggregate sum of all the assets"}>
               <div>
                 <h3>Value of All Active Assets:</h3>
                 <h3>{activeLoansValueString}</h3>
               </div>
-            </Tooltip>
+            </DmmTooltip>
           </Paper>
           <Paper elevation={2} className={styles.statsPaper}>
-            <Tooltip disableFocusListener
+            <DmmTooltip arrow disableFocusListener
                      title={"The amount of interest that can be earned by lenders by minting and holding mAssets."}>
               <div>
                 <h3>Current Interest Rate:</h3>
                 <h3>6.25% APY</h3>
               </div>
-            </Tooltip>
+            </DmmTooltip>
           </Paper>
           <Paper elevation={2} className={styles.statsPaper}>
             {this.renderCollateralizaton(true)}
@@ -103,8 +104,8 @@ class HeaderStats extends React.Component {
 
   renderCollateralizaton = (isActiveCollateralization) => {
     const tooltipText = isActiveCollateralization ?
-      'The amount of collateral backing the system divided by the value of all the circulating mTokens, including interest.' :
-      'The amount of collateral backing the system divided by the value of the total supply of all the mTokens, including interest.';
+      'The amount of collateral backing the system plus the value of all underlying tokens, divided by the value of all the circulating mAssets, including interest.' :
+      'The amount of collateral backing the system plus the value of all underlying tokens, divided by the value of the total supply of all the mAssets, including 1-year\'s interest.';
 
     const collateralization = (this.state.isLoading || !this.state.collateralization)
       ? undefined :
@@ -115,13 +116,13 @@ class HeaderStats extends React.Component {
     return this.state.isLoading ?
       (<CircularProgress style={{justifySelf: "center"}}/>) :
       collateralization ?
-        (<Tooltip disableFocusListener title={tooltipText}>
+        (<DmmTooltip arrow disableFocusListener title={tooltipText}>
           <div>
             <h3
-              className={styles.statsText}>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3>
+              className={styles.statsText}>{isActiveCollateralization ? "Active" : "1-Year"} Collateralization:</h3>
             <h3>{this.standardizeCollateralization(collateralization)}</h3>
           </div>
-        </Tooltip>) :
+        </DmmTooltip>) :
         (<><h3>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3><h3>Error!</h3></>);
   };
 
@@ -131,4 +132,10 @@ class HeaderStats extends React.Component {
 
 }
 
-export default HeaderStats
+const DmmTooltip = withStyles({
+  tooltip: {
+    fontSize: '12px',
+  }
+})(Tooltip);
+
+export default HeaderStats;
