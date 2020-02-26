@@ -2,7 +2,6 @@
 
 .toolbar {
   flex-direction: row !important;
-  justify-content: flex-start !important;
   color: $primary !important;
   background-color: $primary !important;
 }
@@ -11,4 +10,12 @@
   color: $white !important;
   font-family: 'Raleway', 'Open Sans', 'Roboto', sans-serif !important;
   font-size: 18px !important;
+}
+
+.appButton {
+  color: #FFF !important;
+  font-family: 'Raleway', 'Open Sans', 'Roboto', sans-serif !important;
+  font-size: 16px !important;
+  margin-right: 64px !important;
+  justify-self: flex-end;
 }

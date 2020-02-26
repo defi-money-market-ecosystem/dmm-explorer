@@ -4,11 +4,11 @@ import Paper from "@material-ui/core/Paper";
 
 import * as LoansService from "../../services/LoansService";
 
-import styles from "./CollateralizationHeader.module.scss";
+import styles from "./HeaderStats.module.scss";
 import {CircularProgress} from "@material-ui/core";
 import Tooltip from "@material-ui/core/Tooltip";
 
-class CollateralizationHeader extends React.Component {
+class HeaderStats extends React.Component {
 
   constructor(props) {
     super(props);
@@ -74,25 +74,28 @@ class CollateralizationHeader extends React.Component {
           </Paper>
           <Paper elevation={2} className={styles.collateralizationPaper}>
             <Tooltip disableFocusListener
-                     title={"The sum of the values of all the active loans"}>
+                     title={"The aggregate sum of all the assets"}>
               <div>
-                <h3>Value of All Active Loans:</h3>
+                <h3>Value of All Active Assets:</h3>
                 <h3>{activeLoansValueString}</h3>
               </div>
             </Tooltip>
           </Paper>
           <Paper elevation={2} className={styles.collateralizationPaper}>
             <Tooltip disableFocusListener
-                     title={"The (local) time at which these loans were last updated. These loans don't change often, so they can go up to roughly 2 weeks without being updated."}>
+                     title={"The amount of interest that can be earned by lenders by minting and holding mAssets."}>
               <div>
-                <h3>Last Updated:</h3>
-                <h3>{this.state.loanMetadata}</h3>
+                <h3>Current Interest Rate:</h3>
+                <h3>6.25% APY</h3>
               </div>
             </Tooltip>
           </Paper>
           <Paper elevation={2} className={styles.collateralizationPaper}>
             {this.renderCollateralizaton(true)}
           </Paper>
+        </Grid>
+        <Grid item xs={12} lg={8} className={styles.lastUpdatedHeader}>
+          <h6>Last Updated: <b>{this.state.loanMetadata}</b></h6>
         </Grid>
       </Grid>
     );
@@ -128,4 +131,4 @@ class CollateralizationHeader extends React.Component {
 
 }
 
-export default CollateralizationHeader
+export default HeaderStats

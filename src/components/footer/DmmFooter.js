@@ -6,10 +6,6 @@ import * as style from "./DmmFooter.module.scss";
 
 export class DmmFooter extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render = () => {
     return (
       <AppBar position="static" className={style.footerContainer}>

@@ -31,7 +31,7 @@ export class LoanItemComponent extends React.Component {
     const isLienAvailable = !!loan.digitalLienLink;
 
     const lienView = isLienAvailable ?
-      <a href={loan.digitalLienLink} target={"_blank"}>View Lien</a>
+      <a href={loan.digitalLienLink} target={"_blank"} rel="noopener noreferrer">View Lien</a>
       :
       <Tooltip title={"The lien is still being filed for this vehicle. It may take up to a couple weeks to become available."}>
         <span className={style.disabledButton}>View Lien</span>
