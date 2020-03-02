@@ -17,13 +17,13 @@ $loanItemHeight: 128;
 .layoutWrapper {
   min-height: 1px;
   min-width: 1px;
-  margin-bottom: 72px; // toolbar height + 16px of margin
+  margin-bottom: 72px; /* toolbar height + 16px of margin*/
 }
 
 .paperWrapper {
   background-color: $white;
   width: 100%;
-  //height: calc(100vh - $toolbar-height);
+  /*height: calc(100vh - $toolbar-height);*/
   height: 100vh;
   margin-bottom: 72px;
   flex: 1 !important;
@@ -69,9 +69,9 @@ $loanItemHeight: 128;
 
 .divider {
   width: 100%;
-  height: 0.5px;
-  background-color: #CFCFCF;
-  margin-top: 8px;
+  height: 1px;
+  background-color: #f2f3f2;
+  margin-top: 11px;
 }
 
 .activeLoan {

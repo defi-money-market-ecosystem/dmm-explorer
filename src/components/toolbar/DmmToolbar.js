@@ -1,6 +1,7 @@
 import {Button, Toolbar} from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
 import React from "react";
+
+import DMMLogo from '../../assets/dmm-logo.svg';
 
 import styles from './DmmToolbar.module.scss';
 
@@ -13,12 +14,27 @@ class DmmToolbar extends React.Component {
 
   render = () => {
     return (
-      <AppBar position="static">
-        <Toolbar className={styles.toolbar}>
-          <span className={styles.logo}>DMM Explorer</span>
-          <Button className={styles.appButton} href={"https://app.defimoneymarket.com"}>App</Button>
-        </Toolbar>
-      </AppBar>
+      <div className={styles.navbar}>
+        <div className={styles.content}>
+          <div className={styles.logoWrapper}>
+            <div className={styles.logo}>
+              <img src={DMMLogo}/>
+            </div>
+            <div className={styles.logoText}>
+              DMM
+            </div>
+          </div>
+          <div className={styles.buttonsWrapper}>
+            <div className={styles.connectWalletButton}>
+              <a href={'https://app.defimoneymarket.com'}>
+              <Button className={styles.loadWallet}>
+                APP
+              </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   };
 

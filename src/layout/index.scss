@@ -8,10 +8,10 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif !important;
+  font-family: 'Open Sans', sans-serif !important;
   box-sizing: border-box;
   overflow-y: scroll;
-  background: #FAFAFA;
+  background: #deeeff;
   color: $primary;
   font-weight: normal;
   word-wrap: break-word;
@@ -28,7 +28,7 @@ a {
   cursor: pointer;
 
   &:hover {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
   }
 }
 
@@ -145,7 +145,7 @@ h6 {
 }
 
 button {
-  box-shadow: none;
+  /*box-shadow: none;
   outline: none;
   color: $white;
   padding: 10px 15px;
@@ -179,7 +179,7 @@ button {
       color: $pink;
       border-color: $pink;
     }
-  }
+  }*/
 }
 
 input {

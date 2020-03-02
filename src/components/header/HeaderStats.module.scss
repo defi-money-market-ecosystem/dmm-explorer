@@ -15,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: rgba(0,0,0,0.5) 1px 1px 8px -4px, rgba(0,0,0,0.5) 1px 1px 4px -4px !important;
 }
 
 .statsHeader {
@@ -26,11 +27,22 @@
 
 .statsText {
   min-width: 275px;
+  font-weight: 100;
 }
 
 .lastUpdatedHeader {
   margin-top: 24px !important;
-  margin-bottom: -32px !important;
+  margin-bottom: -40px !important;
   text-align: left;
-  padding-left: 16px;
+  padding-left: 6px;
+  font-weight: 100;
+  color: black;
+
+  h6 {
+    font-weight: 100;
+
+    b {
+      font-weight: 400;
+    }
+  }
 }

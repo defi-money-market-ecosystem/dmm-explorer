@@ -77,7 +77,7 @@ class HeaderStats extends React.Component {
             <DmmTooltip arrow disableFocusListener
                      title={"The aggregate sum of all the assets whose status is ACTIVE."}>
               <div>
-                <h3>Value of All Active Assets:</h3>
+                <h3 className={styles.statsText}>Value of All Active Assets:</h3>
                 <h3>{activeLoansValueString}</h3>
               </div>
             </DmmTooltip>
@@ -86,7 +86,7 @@ class HeaderStats extends React.Component {
             <DmmTooltip arrow disableFocusListener
                      title={"The amount of interest that can be earned by lenders by minting and holding mAssets."}>
               <div>
-                <h3>Current Interest Rate:</h3>
+                <h3 className={styles.statsText}>Current Interest Rate:</h3>
                 <h3>6.25% APY</h3>
               </div>
             </DmmTooltip>
