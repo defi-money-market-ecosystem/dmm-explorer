@@ -14,8 +14,8 @@ export class DmmFooter extends React.Component {
             <a style={{'fontWeight': '800'}} href={'https://app.defimoneymarket.com'}>Get DMM</a>
             <a href={'https://github.com/defi-money-market-ecosystem/protocol/wiki'} target={'_blank'}>Docs</a>
             <a href={PDF} target={'_blank'}>Legal</a>
-            <a href={'https://rinkeby.etherscan.io/address/0x02ee9AEbb75470D517BFf722D36762d2b231539C'} target={'_blank'}>Smart Contract</a>
-            <a href={'https://docs.chain.link/docs/defi-money-market-chainlink-testnet'} target={'_blank'}>Chainlink Integration</a>
+            <a href={'https://etherscan.io/address/0x4cb120dd1d33c9a3de8bc15620c7cd43418d77e2'} target={'_blank'}>Smart Contract</a>
+            <a href={'https://docs.chain.link/docs/defi-money-market-chainlink-ethereum-mainnet'} target={'_blank'}>Chainlink Integration</a>
           </div>
           <div className={styles.middle}>
             <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="700.000000pt" height="527.000000pt" viewBox="0 0 700.000000 527.000000" preserveAspectRatio="xMidYMid meet">

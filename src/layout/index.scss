@@ -10,7 +10,7 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif !important;
   box-sizing: border-box;
-  overflow-y: scroll;
+  overflow: auto scroll;
   background: #deeeff;
   color: $primary;
   font-weight: normal;
