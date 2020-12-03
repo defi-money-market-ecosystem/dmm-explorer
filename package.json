@@ -20,6 +20,8 @@
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.0",
     "react-dom": "^16.8.6",
+    "react-google-charts": "^3.0.15",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.1.1",
     "recyclerlistview": "^3.0.0",
     "rimble-ui": "^0.9.7",
@@ -55,9 +57,9 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react-hooks": "^2.0.1",
+    "ethereumjs-util": "latest",
     "lint-staged": "^9.5.0",
     "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
-    "ethereumjs-util": "latest"
+    "pretty-quick": "^1.11.1"
   }
 }

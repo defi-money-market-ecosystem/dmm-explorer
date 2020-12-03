@@ -1,0 +1,55 @@
+
+.assetIntroducersWrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 100px auto;
+}
+
+.pageTitleWrapper {
+  width: 100%;
+  color: black;
+  text-align: center;
+  margin: 10px 0 35px;
+}
+
+.pageTitle {
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.pageSubtitle {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.mapWrapper {
+
+}
+
+.mapWrapper > div > div > div > div > div > svg > g > rect {
+  fill: none;
+}
+
+.totalWrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 75px;
+}
+
+.totalTitle {
+  color: black;
+  font-weight: 100;
+  font-size: 21px;
+  margin-bottom: -5px;
+}
+
+.totalAmount {
+  font-size: 72px;
+  font-weight: 600;
+}
+
+.inlineDMG {
+  font-size: 54px;
+  font-weight: 100;
+  margin-left: -4px;
+}
