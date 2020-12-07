@@ -79,6 +79,8 @@ class AssetIntroducers extends React.Component {
   }
 
   render() {
+    const h = 300;
+
     return (
       <div className={styles.assetIntroducersWrapper}>
         <div className={styles.pageTitleWrapper}>
@@ -93,7 +95,7 @@ class AssetIntroducers extends React.Component {
           <Chart
             ref={elem => this.chart = elem}
             width={'100%'}
-            height={'600px'}
+            height={h+'px'}
             fill={'none'}
             chartType="GeoChart"
             data={this.state.mapData}
@@ -104,7 +106,7 @@ class AssetIntroducers extends React.Component {
             }}
             // Note: you will need to get a mapsApiKey for your project.
             // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-            mapsApiKey="AIzaSyBIumXPkzCsPSRgXqMyOWEnmpo4sgkq5-k"
+            mapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}
             rootProps={{ 'data-testid': '1' }}
           />
         </div>
