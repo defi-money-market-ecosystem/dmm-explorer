@@ -2,6 +2,7 @@ import React from 'react';
 
 import DmmToolbar from './components/toolbar/DmmToolbar.js';
 import HeaderStats from './components/header/HeaderStats.js';
+import NavigationTabs from './components/NavigationTabs/NavigationTabs'
 
 import styles from './App.module.scss';
 import LoanRecyclerView from "./components/loans/LoanRecyclerView";
@@ -22,6 +23,7 @@ class App extends React.Component {
       <div>
         <BrowserRouter>
           <DmmToolbar/>
+          <NavigationTabs/>
           <Switch>
             <Route exact strict path="/" component={() => <div className={styles.App}>
               <HeaderStats/>

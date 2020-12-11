@@ -71,7 +71,7 @@ class AssetIntroducers extends React.Component {
   }
 
   render() {
-    const h = 300;
+    //const h = 300;
 
     return (
       <div className={styles.assetIntroducersWrapper}>
@@ -87,7 +87,7 @@ class AssetIntroducers extends React.Component {
           <Chart
             ref={elem => this.chart = elem}
             width={'100%'}
-            height={h+'px'}
+            height={'auto'}
             fill={'none'}
             chartType="GeoChart"
             data={this.state.mapData}
@@ -112,6 +112,11 @@ class AssetIntroducers extends React.Component {
             </div>
           </div>
           }
+          <div className={styles.purchaseLinkWrapper}>
+            <a href={'https://dao.defimoneymarket.com/asset-introducers/purchase'} target={'_blank'}>
+              Purchase an NFT
+            </a>
+          </div>
       </div>
     )
   }
