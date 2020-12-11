@@ -12,7 +12,7 @@ const tabOrder = [
   },
   {
     path: '/asset-introducers',
-    textKey: 'Affiliates',
+    textKey: 'Introducers',
     regex: /\/asset-introducers/,
   },
 ]
