@@ -5,6 +5,7 @@ export class Loan {
       return new Loan(
         item["public_loan_id"],
         item["vehicle_type"],
+        item["asset_introducer_id"],
         item["vehicle_info"],
         item["vehicle_value"],
         item["vehicle_identification_number_last_6"],
@@ -14,8 +15,9 @@ export class Loan {
     });
   }
 
-  constructor(loanId, vehicleType, vehicleInfo, retailValue, vinLastSix, loanStatus, digitalLienLink) {
+  constructor(loanId, vehicleType, assetIntroducerId, vehicleInfo, retailValue, vinLastSix, loanStatus, digitalLienLink) {
     this.loanId = loanId;
+    this.assetIntroducerId = assetIntroducerId;
     this.vehicleType = vehicleType;
     this.vehicleInfo = vehicleInfo;
     this.retailValue = retailValue;

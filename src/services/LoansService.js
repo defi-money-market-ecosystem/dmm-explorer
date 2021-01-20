@@ -23,6 +23,27 @@ export const getLoansWithMetadata = () => {
     });
 };
 
+export const getActivatedAssetIntroducers = () => {
+  return fetch(`${baseUrl}/v1/asset-introducers/activated`)
+    .then(response => response.json())
+    .then(response => response["data"])
+    .then(data => {
+      return {
+        loans: Loan.fromArray(data["loans"]),
+        lastUpdatedTimestamp: moment(data["last_updated_millis"]).format('LLL')
+      }
+    });
+}
+
+export const getAssetIntroducerById = (assetIntroducerId) => {
+  return fetch(`${baseUrl}/v1/asset-introducers/${assetIntroducerId}`)
+    .then(response => response.json())
+    .then(response => response["data"])
+    .then(data => {
+      return data;
+    });
+}
+
 export const getTotalCollateralization = () => {
   return fetch(`${baseUrl}/v1/dmm/collateralization`)
     .then(response => response.json())

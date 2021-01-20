@@ -1,13 +1,9 @@
 import * as React from "react";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
 import * as LoansService from "../../services/LoansService";
 
 import styles from "./HeaderStats.module.scss";
 import {CircularProgress} from "@material-ui/core";
-import Tooltip from "@material-ui/core/Tooltip";
-import withStyles from "@material-ui/core/styles/withStyles";
 
 class HeaderStats extends React.Component {
 
@@ -68,37 +64,28 @@ class HeaderStats extends React.Component {
     });
 
     return (
-      <Grid container className={styles.statsGrid}>
-        <Grid item xs={12} lg={8} className={styles.statsHeader}>
-          <Paper elevation={2} className={styles.statsPaper}>
-            {this.renderCollateralizaton(false)}
-          </Paper>
-          <Paper elevation={2} className={styles.statsPaper}>
-            <DmmTooltip arrow disableFocusListener
-                     title={"The aggregate sum of all the assets whose status is ACTIVE."}>
-              <div>
-                <h3 className={styles.statsText}>Value of All Active Assets:</h3>
-                <h3>{activeLoansValueString}</h3>
+        <div className="dmm-explorer-statistics-wrap">
+          {this.renderCollateralizaton(false)}
+          <div className="dmm-explorer-statistics-unit">
+            <div className="dmm-explorer-statistics-label">Value of All Active Assets</div>
+            <div className="dmm-explorer-statistics-header">
+              {activeLoansValueString}
+              <div className="dmm-explorer-statistics-header-modal">
+                The aggregate sum of all the assets whose status is ACTIVE.
               </div>
-            </DmmTooltip>
-          </Paper>
-          <Paper elevation={2} className={styles.statsPaper}>
-            <DmmTooltip arrow disableFocusListener
-                     title={"The amount of interest that can be earned by lenders by minting and holding mAssets."}>
-              <div>
-                <h3 className={styles.statsText}>Current Interest Rate:</h3>
-                <h3>6.25% APY</h3>
+            </div>
+          </div>
+          <div className="dmm-explorer-statistics-unit">
+            <div className="dmm-explorer-statistics-label">Current Interest Rate:</div>
+            <div className="dmm-explorer-statistics-header">
+              6.25% <span>APY</span>
+              <div className="dmm-explorer-statistics-header-modal">
+                The amount of interest that can be earned by lenders by minting and holding mAssets.
               </div>
-            </DmmTooltip>
-          </Paper>
-          <Paper elevation={2} className={styles.statsPaper}>
+            </div>
+          </div>
             {this.renderCollateralizaton(true)}
-          </Paper>
-        </Grid>
-        <Grid item xs={12} lg={8} className={styles.lastUpdatedHeader}>
-          <h6>Last Updated: <b>{this.state.loanMetadata}</b></h6>
-        </Grid>
-      </Grid>
+        </div>
     );
   };
 
@@ -116,13 +103,16 @@ class HeaderStats extends React.Component {
     return this.state.isLoading ?
       (<CircularProgress style={{justifySelf: "center"}}/>) :
       collateralization ?
-        (<DmmTooltip arrow disableFocusListener title={tooltipText}>
-          <div>
-            <h3
-              className={styles.statsText}>{isActiveCollateralization ? "Active" : "1-Year"} Collateralization:</h3>
-            <h3>{this.standardizeCollateralization(collateralization)}</h3>
-          </div>
-        </DmmTooltip>) :
+        (
+          <div className="dmm-explorer-statistics-unit">
+            <div className="dmm-explorer-statistics-label">{isActiveCollateralization ? "Active" : "1-Year"} Collateralization:</div>
+            <div className="dmm-explorer-statistics-header">
+              {this.standardizeCollateralization(collateralization)}
+              <div className="dmm-explorer-statistics-header-modal">
+                { tooltipText }
+              </div>
+            </div>
+          </div>) :
         (<><h3>{isActiveCollateralization ? "Active" : "Total"} Collateralization:</h3><h3>Error!</h3></>);
   };
 
@@ -131,11 +121,5 @@ class HeaderStats extends React.Component {
   };
 
 }
-
-const DmmTooltip = withStyles({
-  tooltip: {
-    fontSize: '12px',
-  }
-})(Tooltip);
 
 export default HeaderStats;

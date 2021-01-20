@@ -14,29 +14,21 @@ class DmmToolbar extends React.Component {
 
   render = () => {
     return (
-      <div className={styles.navbar}>
-        <div className={styles.content}>
-          <a href={'https://explorer.defimoneymarket.com'}>
-            <div className={styles.logoWrapper}>
-              <div className={styles.logo}>
-                <img src={DMMLogo}/>
-              </div>
-              <div className={styles.logoText}>
-                DMM
-              </div>
-            </div>
-          </a>
-          <div className={styles.buttonsWrapper}>
-            <div className={styles.connectWalletButton}>
-              <a href={'https://app.defimoneymarket.com'}>
-              <Button className={styles.loadWallet}>
-                APP
-              </Button>
-              </a>
-            </div>
-          </div>
+      <nav>
+        <a href={'https://explorer.defimoneymarket.com'}>
+        <div className="nav-logo">
+          <img src={DMMLogo}/>
+            <div className="logo-text">DMM</div>
         </div>
-      </div>
+        </a>
+        <div className="nav-actions">
+          <a href={'https://app.defimoneymarket.com'}>
+            <Button className={styles.loadWallet}>
+              APP
+            </Button>
+          </a>
+        </div>
+      </nav>
     );
   };
 

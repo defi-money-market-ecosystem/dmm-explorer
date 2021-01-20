@@ -2,17 +2,20 @@ import React from 'react';
 
 import DmmToolbar from './components/toolbar/DmmToolbar.js';
 import HeaderStats from './components/header/HeaderStats.js';
-import NavigationTabs from './components/NavigationTabs/NavigationTabs'
-
-import styles from './App.module.scss';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import NavigationTabs from './components/NavigationTabs/NavigationTabs';
+// import styles from './App.module.scss';
+import './style.scss';
 import LoanRecyclerView from "./components/loans/LoanRecyclerView";
 import {DmmFooter} from "./components/footer/DmmFooter";
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-
-import AssetIntroducers from './components/AssetIntroducers/AssetIntroducers';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import MainPage from './pages/MainPage';
+import AffiliateEmptyPage from './pages/AffiliateEmptyPage';
+import AffiliateFilledPage from './pages/AffiliateFilledPage';
+import BecomeAnAffiliatePage from './pages/BecomeAnAffiliatePage';
+import AssetIntroducers from './components/AssetIntroducers/AssetIntroducers';
 
 library.add(fab);
 
@@ -20,20 +23,24 @@ class App extends React.Component {
 
   render = () => {
     return (
-      <div>
-        <BrowserRouter>
-          <DmmToolbar/>
-          <NavigationTabs/>
+      <div className="app-wrap">
+        <DmmToolbar/>
+        <NavigationTabs/>
+        <div className="content-wrap">
           <Switch>
             <Route exact strict path="/" component={() => <div className={styles.App}>
               <HeaderStats/>
               <LoanRecyclerView/>
             </div>}/>
+            {/*<Route exact path='/' component={MainPage}/>*/}
+            <Route path='/empty_page' component={AffiliateEmptyPage}/>
+            <Route path='/filled_page' component={AffiliateFilledPage}/>
+            <Route path='/affiliate_page' component={BecomeAnAffiliatePage}/>
             <Route exact strict path="/asset-introducers" component={() => <AssetIntroducers/>}/>
             <Redirect to="/"/>
           </Switch>
-          <DmmFooter/>
-        </BrowserRouter>
+        </div>
+        <DmmFooter/>
       </div>
     );
   }
