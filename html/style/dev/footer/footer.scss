@@ -1,0 +1,153 @@
+footer {
+  background-color: $footerBg;
+  color: $whiteColor;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 124.5rem;
+  padding: 2rem 4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    position: relative;
+    padding: 12rem 4rem 2rem;
+  }
+}
+
+.footer-link-wrap {
+  padding-right: 2rem;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    padding: 0 0 2rem;
+    align-items: center;
+    order: 1;
+  }
+
+  a {
+    margin-bottom: 1.2rem;
+    color: $whiteColor;
+    font-size: 1.6rem;
+    text-decoration: none;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &.bold {
+      font-weight: 700;
+    }
+  }
+}
+
+.footer-copyright {
+  padding: 0 2rem;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    padding: 0;
+    order: 2;
+  }
+
+  img {
+    max-width: 8.9rem;
+
+    @media (max-width: 700px) {
+      position: absolute;
+      top: 3rem;
+    }
+  }
+
+  .copyright {
+    margin-top: 3.6rem;
+    font-weight: 300;
+    font-size: 1.3rem;
+
+    @media (max-width: 700px) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.footer-social {
+  padding: 0 2rem;
+  width: 33.333%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    width: 100%;
+    padding: 2rem 0;
+    align-items: center;
+    order: 1;
+  }
+
+  .company-name {
+    font-weight: 300;
+    font-size: 6.4rem;
+    line-height: 5.4rem;
+  }
+
+  .social-wrap {
+    width: 100%;
+    text-align: right;
+
+    @media (max-width: 700px) {
+      text-align: center;
+    }
+  }
+
+  .social-label {
+    font-size: 1.6rem;
+    margin-bottom: .5rem;
+  }
+
+  .social-links {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @media (max-width: 700px) {
+      justify-content: center;
+    }
+
+    a {
+      display: block;
+      max-width: 3.5rem;
+      width: 100%;
+      margin-left: 1.5rem;
+      transition: opacity .3s;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        opacity: .5;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}

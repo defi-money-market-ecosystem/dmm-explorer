@@ -1,0 +1,46 @@
+.dmm-intro-wrap {
+  width: 100%;
+  max-width: 108rem;
+  padding: 0 4rem;
+  margin: 0 auto 6.2rem;
+
+  h1 {
+    position: relative;
+    font-size: 8rem;
+    font-weight: 400;
+    margin: -1.7rem 0 3.7rem -.7rem;
+
+    &:after {
+      content: "";
+      width: 19.4rem;
+      height: .7rem;
+      position: absolute;
+      top: 100%;
+      left: .7rem;
+      background-color: $activeColor;
+    }
+  }
+
+  h4 {
+    margin: 0;
+    color: $headerLight;
+    font-size: 2.4rem;
+    font-weight: 300;
+  }
+
+  p {
+    font-size: 2.4rem;
+    font-weight: 300;
+    margin: 0 0 3.1rem;
+  }
+}
+
+.dmm-intro-desc {
+  font-size: 2.4rem;
+  margin-bottom: .4rem;
+
+  span {
+    color: $activeColor;
+    font-weight: 600;
+  }
+}

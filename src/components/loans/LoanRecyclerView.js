@@ -1,18 +1,12 @@
 import * as React from "react";
 
-import Grid from "@material-ui/core/Grid";
-
 import {RecyclerListView, DataProvider, LayoutProvider} from "recyclerlistview/web";
 import style from "./LoansLayout.module.scss";
 import * as LoanService from "../../services/LoansService";
 import {LoanItemComponent} from "./LoanItemComponent";
-import InfiniteScroll from 'react-infinite-scroll-component';
-import Paper from "@material-ui/core/Paper";
+import { getAssetIntroducerById } from '../../services/LoansService';
 
-import * as LoanItemStyle from "./LoansLayout.module.scss";
-import { getActivatedAssetIntroducers, getAssetIntroducerById } from '../../services/LoansService';
-
-const assets_types = {
+const assetsTypes = {
   AUTO: 'Auto',
   TRUCK: 'Truck',
   PLANE: 'Plane',
@@ -28,6 +22,7 @@ class LoanRecyclerView extends React.Component {
 
     this.state = {
       assetIntroducers: [],
+      currentAssetIntroducer: '',
     };
     this.widthTracker = React.createRef();
     let listItemHeight = 150;
@@ -70,12 +65,15 @@ class LoanRecyclerView extends React.Component {
     });
     const activatedAssetIntroducers = Array.from(new Set(loans.map(item => item.assetIntroducerId)));
     let assetIntroducers = [];
-    const promises = activatedAssetIntroducers.map(item => getAssetIntroducerById(item));
-    assetIntroducers = await Promise.all(promises);
-    // loans = loans.map((item) => {});
-    console.log('assetIntroducers',assetIntroducers);
-    console.log('loans', this.state.assetType ? loans.filter(item => item.vehicleType===this.state.assetType) : loans);
-    const filteredLoans = this.state.assetType ? loans.filter(item => item.vehicleType===this.state.assetType) : loans;
+    const promises = activatedAssetIntroducers.map(item => ({id:item, promise:getAssetIntroducerById(item)}));
+    for (const item of promises) {
+      assetIntroducers.push({
+        id: item.id,
+        introducer: await item.promise,
+      })
+    }
+    let filteredLoans = this.state.assetType ? loans.filter(item => item.vehicleType===this.state.assetType) : loans;
+    filteredLoans = this.state.currentAssetIntroducer ? filteredLoans.filter(item => item.assetIntroducerId===this.state.currentAssetIntroducer) : filteredLoans;
     this.setState({
       isLoading: false,
       assetIntroducers,
@@ -90,13 +88,19 @@ class LoanRecyclerView extends React.Component {
     );
   };
 
-  handleChangeSelect = (event) => {
+  handleChangeAssetType = (event) => {
     this.setState({
       assetType: event.currentTarget.value,
     })
     this.refreshData();
   }
 
+  handleChangeAssetIntroducer = (event) => {
+    this.setState({
+      currentAssetIntroducer: event.currentTarget.value,
+    })
+    this.refreshData();
+  }
 
   render = () => {
     return (
@@ -105,19 +109,19 @@ class LoanRecyclerView extends React.Component {
           <div className="filter">
             <div className="filter-unit">
               Filter by asset introducer:
-              <select required name="" id="sel1">
+              <select onChange={this.handleChangeAssetIntroducer} required name="" id="sel1">
                 <option value="" disabled selected hidden>None</option>
                 {
-                  this.state.assetIntroducers.map(item => <option value={item.name}>{item.name}</option>)
+                  this.state.assetIntroducers.map(item => <option value={item.id}>{item.introducer.name}</option>)
                 }
               </select>
             </div>
 
             <div className="filter-unit">
               Filter by asset type:
-              <select required name="" id="sel2" onChange={this.handleChangeSelect}>
+              <select required name="" id="sel2" onChange={this.handleChangeAssetType}>
                 <option value="" disabled selected hidden>None</option>
-                {Object.entries(assets_types).map(item => <option value={item[0]}>{item[1]}</option>)}
+                {Object.entries(assetsTypes).map(item => <option value={item[0]}>{item[1]}</option>)}
               </select>
             </div>
           </div>

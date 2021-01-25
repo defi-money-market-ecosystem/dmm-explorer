@@ -25,18 +25,21 @@ class App extends React.Component {
     return (
       <div className="app-wrap">
         <DmmToolbar/>
-        <NavigationTabs/>
         <div className="content-wrap">
           <Switch>
-            <Route exact strict path="/" component={() => <div className={styles.App}>
-              <HeaderStats/>
-              <LoanRecyclerView/>
+            <Route exact strict path="/" component={() => <div >
+              <NavigationTabs/>
+              <MainPage/>
+            </div>}/>
+            <Route exact strict path="/asset-introducers" component={() => <div >
+              <NavigationTabs/>
+              <AssetIntroducers/>
             </div>}/>
             {/*<Route exact path='/' component={MainPage}/>*/}
-            <Route path='/empty_page' component={AffiliateEmptyPage}/>
+            <Route exact path='/empty_page' component={AffiliateEmptyPage}/>
             <Route path='/filled_page' component={AffiliateFilledPage}/>
             <Route path='/affiliate_page' component={BecomeAnAffiliatePage}/>
-            <Route exact strict path="/asset-introducers" component={() => <AssetIntroducers/>}/>
+            {/*<Route exact strict path="/asset-introducers" component={() => <AssetIntroducers/>}/>*/}
             <Redirect to="/"/>
           </Switch>
         </div>

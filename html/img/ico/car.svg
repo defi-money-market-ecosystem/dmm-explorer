@@ -1,0 +1,13 @@
+<svg width="82" height="65" viewBox="0 0 82 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g id="Car">
+        <circle id="Oval 2" cx="13.5" cy="36.5" r="5.5" stroke="#88B9EE" stroke-width="5"/>
+        <circle id="Oval 2_2" cx="68.5" cy="36.5" r="5.5" stroke="#88B9EE" stroke-width="5"/>
+        <rect id="Rectangle 8" x="2.5" y="26.5" width="77" height="26" rx="5.5" stroke="#88B9EE" stroke-width="5"/>
+        <rect id="Rectangle 7" x="7.5" y="52.5" width="9" height="10" rx="2.5" stroke="#88B9EE" stroke-width="5"/>
+        <rect id="Rectangle 7_2" x="65.5" y="52.5" width="9" height="10" rx="2.5" stroke="#88B9EE" stroke-width="5"/>
+        <path id="Path 25" fill-rule="evenodd" clip-rule="evenodd" d="M6 26L19.1499 3H62.4875L76 26H6Z" stroke="#88B9EE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path id="Line 3" d="M26.0901 32.5H54.9105" stroke="#88B9EE" stroke-width="5" stroke-linecap="round"/>
+        <path id="Line 3_2" d="M26.0901 39.5H54.9105" stroke="#88B9EE" stroke-width="5" stroke-linecap="round"/>
+        <path id="Line 3_3" d="M26.0901 45.5H54.9105" stroke="#88B9EE" stroke-width="5" stroke-linecap="round"/>
+    </g>
+</svg>

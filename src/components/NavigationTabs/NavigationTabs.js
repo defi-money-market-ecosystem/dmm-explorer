@@ -18,7 +18,7 @@ const tabOrder = [
 ]
 
 const Tabs = styled.div`
-  margin: 110px auto -25px;
+  margin: 50px auto 25px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

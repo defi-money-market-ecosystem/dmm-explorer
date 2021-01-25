@@ -56,6 +56,10 @@ Number.prototype.countDecimals = function () {
   }
 };
 
+export const formatAmount = (amount) =>{
+  return (amount.substring(0, amount.length - 15) / 1000).toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',');
+}
+
 export default {
   _0,
   BN,

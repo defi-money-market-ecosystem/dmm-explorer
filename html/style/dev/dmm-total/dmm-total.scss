@@ -1,0 +1,24 @@
+.dmm-total {
+  width: 100%;
+  max-width: 108rem;
+  padding: 0 4rem;
+  margin: 0 auto 11.3rem;
+  text-align: center;
+}
+
+.dmm-total-desc {
+  font-size: 2.1rem;
+  font-weight: 300;
+}
+
+.dmm-total-count {
+  font-size: 7.2rem;
+  color: $activeColor;
+  font-weight: 600;
+  margin-top: -.6rem;
+
+  span {
+    font-size: 5.4rem;
+    font-weight: 300;
+  }
+}

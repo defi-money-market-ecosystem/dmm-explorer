@@ -1,0 +1,72 @@
+.dmm-explorer-statistics-wrap {
+  max-width: 108rem;
+  width: 100%;
+  padding: 0 4rem;
+  margin: 0 auto 6.2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dmm-explorer-statistics-unit {
+  width: 50%;
+  padding: 0 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.dmm-explorer-statistics-label {
+  font-size: 2.4rem;
+  font-weight: 300;
+}
+
+.dmm-explorer-statistics-header {
+  margin-top: -1rem;
+  font-size: 6rem;
+  font-weight: 600;
+  color: $activeColor;
+  position: relative;
+
+  span {
+    font-size: 3.6rem;
+    font-weight: 400;
+  }
+
+  &:hover {
+
+    .dmm-explorer-statistics-header-modal {
+      display: block;
+    }
+  }
+}
+
+.dmm-explorer-statistics-header-modal {
+  display: none;
+  font-size: 1.2rem;
+  font-weight: 300;
+  width: 30rem;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15rem;
+  padding: 1rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 5;
+  border-radius: .5rem;
+
+  &:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    margin-left: -.5rem;
+    border: .5rem solid transparent;
+    border-bottom: .5rem solid rgba(0, 0, 0, 0.7);
+  }
+}
