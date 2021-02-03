@@ -427,6 +427,9 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between; }
+  @media (max-width: 700px) {
+    nav {
+      padding: 3.3rem 3rem 0; } }
 
 .nav-logo {
   display: flex;
@@ -620,6 +623,9 @@ footer {
   max-width: 108rem;
   padding: 0 4rem 10.5rem;
   margin: 0 auto; }
+  @media (max-width: 700px) {
+    .dmm-explorer-statistics-table-wrap {
+      padding: 0 3rem 4.5rem; } }
 
 .dmm-explorer-statistics-table-filter {
   display: flex;
@@ -658,6 +664,9 @@ footer {
       min-width: 14.1rem;
       border-radius: .5rem;
       margin-left: .5rem; }
+      @media (max-width: 700px) {
+        .dmm-explorer-statistics-table-filter .filter select {
+          margin-left: 0; } }
       .dmm-explorer-statistics-table-filter .filter select:invalid {
         color: #8B9EB2; }
       .dmm-explorer-statistics-table-filter .filter select option {
@@ -673,6 +682,9 @@ footer {
   border-radius: .5rem;
   padding: 2.2rem 2.7rem 2.3rem 3.7rem;
   display: flex; }
+  @media (max-width: 700px) {
+    .dmm-explorer-statistics-table-unit {
+      padding: 2.2rem 2rem 2.3rem 2rem; } }
 
 .dmm-explorer-statistics-table-ico {
   width: 12rem;
@@ -681,12 +693,15 @@ footer {
     .dmm-explorer-statistics-table-ico {
       align-self: flex-start;
       flex-shrink: 0;
-      width: 9rem; } }
+      width: 6.9rem;
+      padding-top: .5rem; } }
   .dmm-explorer-statistics-table-ico img {
     max-width: 11rem; }
     @media (max-width: 700px) {
       .dmm-explorer-statistics-table-ico img {
-        max-width: 7rem; } }
+        max-width: 7rem;
+        width: 5rem;
+        height: 5rem; } }
 
 .dmm-explorer-statistics-table-desc {
   flex-grow: 1;
@@ -694,34 +709,45 @@ footer {
   .dmm-explorer-statistics-table-desc .company {
     font-size: 1.8rem;
     color: #327CCB;
-    margin-bottom: .2rem; }
-  .dmm-explorer-statistics-table-desc .model {
-    font-size: 2.3rem;
-    width: 100%;
-    padding-right: 3rem;
+    margin-bottom: .2rem;
+    display: inline-flex;
     position: relative; }
-    .dmm-explorer-statistics-table-desc .model:hover .dmm-explorer-statistics-header-modal {
-      display: block; }
-    .dmm-explorer-statistics-table-desc .model .status {
+    @media (max-width: 700px) {
+      .dmm-explorer-statistics-table-desc .company {
+        font-size: 1.6rem; } }
+    .dmm-explorer-statistics-table-desc .company .status {
       position: absolute;
-      right: 0;
-      top: .9rem;
+      right: -2.5rem;
+      top: 0.4rem;
       width: 1.6rem;
       height: 1.6rem;
       border-radius: 50%;
       background-color: #15D31D; }
-      .dmm-explorer-statistics-table-desc .model .status.error {
+      .dmm-explorer-statistics-table-desc .company .status.error {
         background-color: #E90909; }
-      .dmm-explorer-statistics-table-desc .model .status.pending {
+      .dmm-explorer-statistics-table-desc .company .status.pending {
         background-color: #ffb95e; }
+  .dmm-explorer-statistics-table-desc .model {
+    font-size: 2.3rem;
+    width: 100%;
+    position: relative; }
+    .dmm-explorer-statistics-table-desc .model:hover .dmm-explorer-statistics-header-modal {
+      display: block; }
   .dmm-explorer-statistics-table-desc .model-text {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+    @media (max-width: 700px) {
+      .dmm-explorer-statistics-table-desc .model-text {
+        font-size: 1.7rem;
+        padding-right: .3rem; } }
   .dmm-explorer-statistics-table-desc .price {
     font-size: 2.8rem;
     font-weight: 300; }
+    @media (max-width: 700px) {
+      .dmm-explorer-statistics-table-desc .price {
+        font-size: 1.9rem; } }
 
 .dmm-explorer-statistics-table-actions {
   width: 13rem;
@@ -745,7 +771,8 @@ footer {
         font-size: 1.8rem; } }
   .dmm-explorer-statistics-table-actions .unit-id {
     font-size: 1.6rem;
-    color: #BBCADA; }
+    color: #BBCADA;
+    white-space: nowrap; }
     @media (max-width: 700px) {
       .dmm-explorer-statistics-table-actions .unit-id {
         font-size: 1.3rem; } }
@@ -826,5 +853,152 @@ footer {
   .dmm-total-count span {
     font-size: 5.4rem;
     font-weight: 300; }
+
+.dmm-burn-header-wrap {
+  max-width: 104.8rem;
+  width: 100%;
+  padding: 0 4rem;
+  margin: 0 auto 6.6rem; }
+  @media (max-width: 1024px) {
+    .dmm-burn-header-wrap {
+      margin: 0 auto 5.3rem; } }
+  .dmm-burn-header-wrap h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 8rem;
+    line-height: 10.9rem;
+    margin-bottom: 3.4rem;
+    position: relative; }
+    @media (max-width: 1024px) {
+      .dmm-burn-header-wrap h1 {
+        font-size: 6.4rem;
+        line-height: 8.7rem;
+        margin-bottom: 2.7rem; } }
+    @media (max-width: 700px) {
+      .dmm-burn-header-wrap h1 {
+        font-size: 5.4rem;
+        line-height: 7.2rem;
+        margin-bottom: 2.7rem; } }
+    .dmm-burn-header-wrap h1:after {
+      content: "";
+      width: 19.5rem;
+      height: .8rem;
+      background-color: #327CCB;
+      position: absolute;
+      top: 100%;
+      left: .4rem; }
+      @media (max-width: 1024px) {
+        .dmm-burn-header-wrap h1:after {
+          width: 16.4rem; } }
+  .dmm-burn-header-wrap h2 {
+    color: #0A2A5A;
+    font-weight: 600;
+    font-size: 12rem;
+    line-height: 16.3rem;
+    margin: 0; }
+    @media (max-width: 1024px) {
+      .dmm-burn-header-wrap h2 {
+        font-size: 9.6rem;
+        line-height: 13rem; } }
+    @media (max-width: 700px) {
+      .dmm-burn-header-wrap h2 {
+        font-size: 8.2rem;
+        line-height: 11rem; } }
+  .dmm-burn-header-wrap h3 {
+    font-weight: 300;
+    font-size: 4rem;
+    line-height: 5.4rem;
+    margin: -.8rem 0 0; }
+    @media (max-width: 1024px) {
+      .dmm-burn-header-wrap h3 {
+        font-size: 3.2rem;
+        line-height: 4.3rem; } }
+    @media (max-width: 700px) {
+      .dmm-burn-header-wrap h3 {
+        font-size: 2.8rem;
+        line-height: 3.9rem; } }
+
+.dmm-burn-content-wrap {
+  max-width: 124rem;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto 11.1rem;
+  display: flex;
+  flex-wrap: wrap; }
+  @media (max-width: 1024px) {
+    .dmm-burn-content-wrap {
+      margin: 0 auto 8.8rem; } }
+
+.dmm-burn-unit-wrap {
+  width: 50%;
+  padding: 0 3rem; }
+  @media (max-width: 700px) {
+    .dmm-burn-unit-wrap {
+      width: 100%;
+      padding-bottom: 3rem; }
+      .dmm-burn-unit-wrap:last-child {
+        padding-bottom: 0; } }
+
+.dmm-burn-unit {
+  height: 100%;
+  padding: 2.1rem 5.7rem 3.5rem;
+  background-color: #fff;
+  box-shadow: 1px 1px 8px -4px rgba(0, 0, 0, 0.5), 1px 1px 4px -4px rgba(0, 0, 0, 0.5);
+  border-radius: .5rem; }
+  @media (max-width: 1024px) {
+    .dmm-burn-unit {
+      padding: 2.1rem 4.5rem 3.5rem; } }
+  .dmm-burn-unit h4 {
+    color: #0A2A5A;
+    font-weight: 600;
+    font-size: 7.2rem;
+    line-height: 9.8rem;
+    margin: 0 0 -.4rem; }
+    @media (max-width: 1024px) {
+      .dmm-burn-unit h4 {
+        font-size: 4.7rem;
+        line-height: 7.8rem; } }
+  .dmm-burn-unit h5 {
+    margin: 0 0 3.3rem;
+    font-weight: 300;
+    font-size: 2.8rem;
+    line-height: 3.8rem;
+    position: relative; }
+    @media (max-width: 1024px) {
+      .dmm-burn-unit h5 {
+        font-size: 2.2rem;
+        line-height: 3rem;
+        margin: 0 0 2.7rem; } }
+    @media (max-width: 1024px) {
+      .dmm-burn-unit h5 {
+        font-size: 2.5rem;
+        line-height: 3.2rem;
+        margin: 0 0 2.7rem; } }
+    .dmm-burn-unit h5:after {
+      content: "";
+      width: 20rem;
+      height: .6rem;
+      background-color: #327CCB;
+      position: absolute;
+      top: 100%;
+      left: .4rem; }
+      @media (max-width: 1024px) {
+        .dmm-burn-unit h5:after {
+          width: 16rem;
+          top: auto;
+          bottom: -1rem; } }
+  .dmm-burn-unit p {
+    font-weight: 300;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin: 0; }
+    @media (max-width: 1024px) {
+      .dmm-burn-unit p {
+        font-size: 1.4rem;
+        line-height: 2rem; } }
+    @media (max-width: 1024px) {
+      .dmm-burn-unit p {
+        font-size: 1.8rem;
+        line-height: 2.5rem; } }
 
 /*# sourceMappingURL=style.css.map */

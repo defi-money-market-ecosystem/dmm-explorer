@@ -16,6 +16,7 @@ import AffiliateEmptyPage from './pages/AffiliateEmptyPage';
 import AffiliateFilledPage from './pages/AffiliateFilledPage';
 import BecomeAnAffiliatePage from './pages/BecomeAnAffiliatePage';
 import AssetIntroducers from './components/AssetIntroducers/AssetIntroducers';
+import BurnPage from './pages/BurnPage';
 
 library.add(fab);
 
@@ -39,6 +40,7 @@ class App extends React.Component {
             <Route exact path='/empty_page' component={AffiliateEmptyPage}/>
             <Route path='/filled_page' component={AffiliateFilledPage}/>
             <Route path='/affiliate_page' component={BecomeAnAffiliatePage}/>
+            <Route path='/burn_page' component={BurnPage}/>
             {/*<Route exact strict path="/asset-introducers" component={() => <AssetIntroducers/>}/>*/}
             <Redirect to="/"/>
           </Switch>

@@ -6,6 +6,10 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 700px) {
+    padding: 3.3rem 3rem 0;
+  }
 }
 
 .nav-logo {
